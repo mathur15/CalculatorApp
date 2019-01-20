@@ -1,0 +1,55 @@
+/*.boardRow{
+	border:1px solid black;
+	height:50 px;
+	width:50px;
+}*/
+
+.outer {
+  display: flex;
+  flex-direction: row;
+  /*color:black;
+  margin: 100 px 100px;
+  border: 25px solid green;
+  padding:1px;
+  width:1px;
+  height: 50px;
+  background-color: red;*/
+} 
+
+.calculator{
+	color:black;
+	display: flex;
+    flex-direction: row;
+    color:black;
+    border: 1px solid black;
+
+}
+
+.calcButtons{
+	background-color: grey;
+	padding: 1px;
+	float:left;
+	padding: 1px;
+	border:1px solid black;
+	margin-right:-1px;
+	margin-top:-1px;
+}
+
+body{
+	background-color: teal;
+	border: 10px solid black;
+	padding: 175px 150px;
+	margin: 143px;
+	display: table;
+}
+html{
+	padding-left: 250px;
+	padding-bottom: 100px;
+}
+
+
+
+
+/*.game-info {
+  margin-left: 20px;
+}*/
