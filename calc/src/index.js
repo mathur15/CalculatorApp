@@ -8,70 +8,123 @@ import './index.css';
 2. Create another component just for result
 3. Pass in the state of calculator to result for it display
 */
-
-function Square(){
-          return(
-               <button className="calcButtons">
-               BUTTON!!
-              </button>
-          );
-}
-
-// class result extends React.Component{
-
-// }
-
-class calculator extends React.Component{
-     renderSquare(i){
-          return(
-               <Square/>
-          )
-     }
-
+class Result extends React.Component{
      render(){
           return(
-           <div>
-               <div className="boardRow">
-                   {this.renderSquare(1)}
-                   {this.renderSquare(1)}
-                   {this.renderSquare(1)}
-                   {this.renderSquare(1)}
-               </div>
-               <div className="boardRow">
-                    {this.renderSquare(1)}
-                    {this.renderSquare(1)}
-                    {this.renderSquare(1)}
-                    {this.renderSquare(1)}
-               </div>
-               <div className="boardRow">
-                    {this.renderSquare(1)}
-                    {this.renderSquare(1)}
-                    {this.renderSquare(1)}
-                    {this.renderSquare(1)}
-               </div>
+          <div className="result">
+            <div className="answer">
+              999 
+             </div>     
           </div>
           )
      }
-
 }
 
-
-class calc extends React.Component{
+class Clear extends React.Component{
      render(){
           return(
-               <div className="outer">
-                    <div className="calculator">
-                         <calculator/>
-                    </div>
-                    <div className="info">
-                         <div></div>
-                    </div>
+               <div className="secondRow">
+                    <div className="clearButton">
+                        clear  
+                    </div>  
                </div>
-          );
+          )
      }
 }
 
+class Calculator extends React.Component{
+  render(){
+      return(
+          <table>
+               <Result/>
+               <Clear/>
+        <tr>
+                  <td className="buttons">  
+                    <button>
+                         7
+                    </button>
+                  </td>
+                  <td className="vertical buttons">
+                    <button>
+                         8
+                    </button>
+                  </td>
+                  <td className="vertical buttons">  
+                    <button>
+                         9
+                    </button>
+                  </td> 
+                  <td className="signs">
+                    <button className="operations">
+                      -
+                    </button>
+                  </td>  
+
+        </tr>
+        <tr>
+                  <td className="horizontal buttons">  
+           <button>
+                         4
+                    </button>
+                  </td>
+                  <td className="vertical horizontal buttons">              
+                    <button>
+                         5
+                    </button>
+                  </td>
+                  <td className="horizontal buttons">  
+                    <button>
+                         6
+                    </button>
+                   </td>
+                   <td className="horizontal signs">
+                    <button className="operations">
+                      +
+                    </button>
+                  </td> 
+        </tr>
+
+        <tr>
+                   <td className="buttons">
+                     <button>
+                         1
+                    </button>
+                   </td>
+                   <td className="vertical buttons"> 
+                    <button>
+                         2
+                    </button>
+                   </td>
+                   <td className="buttons"> 
+                    <button>
+                         3
+                    </button>
+                   </td> 
+                   <td className="signs">
+                    <button className="operations">
+                      =
+                    </button>
+                  </td> 
+        </tr>
+          </table>
+          );
+     }
+
+}
+
+class Calc extends React.Component{
+  render(){
+    return(
+      <div className="outer">
+        <div className="calculator">
+          <Calculator/>
+        </div>
+      </div>
+    );
+  }
+}
+
 ReactDOM.render(
-     <calc />,
-     document.getElementById('root')
+  <Calc />,
+  document.getElementById('root')
 );
