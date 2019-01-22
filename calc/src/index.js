@@ -35,10 +35,14 @@ class Clear extends React.Component{
 class Calculator extends React.Component{
   render(){
       return(
+        <div>
+          <div className="firstSecond">
+            <Result/>
+            <Clear/>
+          </div>
+          <div className="numberOps">
           <table>
-               <Result/>
-               <Clear/>
-        <tr>
+               <tr>
                   <td className="buttons">  
                     <button>
                          7
@@ -59,11 +63,10 @@ class Calculator extends React.Component{
                       -
                     </button>
                   </td>  
-
-        </tr>
-        <tr>
-                  <td className="horizontal buttons">  
-           <button>
+                </tr>
+                 <tr>
+                 <td className="horizontal buttons">  
+                    <button>
                          4
                     </button>
                   </td>
@@ -82,9 +85,8 @@ class Calculator extends React.Component{
                       +
                     </button>
                   </td> 
-        </tr>
-
-        <tr>
+                 </tr>
+                 <tr>
                    <td className="buttons">
                      <button>
                          1
@@ -105,8 +107,10 @@ class Calculator extends React.Component{
                       =
                     </button>
                   </td> 
-        </tr>
+                 </tr>
           </table>
+        </div>
+      </div>
           );
      }
 
