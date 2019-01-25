@@ -13,7 +13,7 @@ class Result extends React.Component{
           return(
           <div className="result">
             <div className="answer">
-              999 
+              {this.props.value}
              </div>     
           </div>
           )
@@ -21,6 +21,9 @@ class Result extends React.Component{
 }
 
 class Clear extends React.Component{
+     constructor(props){
+      super(props);
+     }
      render(){
           return(
                <div className="secondRow">
@@ -33,6 +36,40 @@ class Clear extends React.Component{
 }
 
 class Calculator extends React.Component{
+  constructor(){
+    this.state={
+      a:0,
+      b:0,
+      isOperator:False,
+      operator:null
+      count:0,
+    }
+
+  }
+
+  operands(i){
+     if(this.state.count==0 && this.state.isOperator==False){
+      this.state={
+        a:Number(i),
+        b:0,
+        isOperator: True
+        count:1,
+        operator:null
+      }
+     if(this.state.isOperator){
+       this.state={
+        a:Number(i),
+        b:0,
+        isOperator: False,
+        count:2,
+        operator:i,
+       }
+     } 
+     if(count==2){
+
+     }
+
+  }
   render(){
       return(
         <div>
@@ -44,66 +81,66 @@ class Calculator extends React.Component{
           <table>
                <tr>
                   <td className="buttons">  
-                    <button>
+                    <button onClick={()=> this.operands("7")}>
                          7
                     </button>
                   </td>
-                  <td className="vertical buttons">
+                  <td className="vertical buttons" onClick={()=> this.operands("8")}>
                     <button>
                          8
                     </button>
                   </td>
-                  <td className="vertical buttons">  
+                  <td className="vertical buttons" onClick={()=> this.operands("9")}>  
                     <button>
                          9
                     </button>
                   </td> 
                   <td className="signs">
-                    <button className="operations">
+                    <button className="operations" onClick={()=> this.operands("=")}>
                       -
                     </button>
                   </td>  
                 </tr>
                  <tr>
-                 <td className="horizontal buttons">  
+                 <td className="horizontal buttons" onClick={()=> this.operands("4")}>  
                     <button>
                          4
                     </button>
                   </td>
-                  <td className="vertical horizontal buttons">              
+                  <td className="vertical horizontal buttons" onClick={()=> this.operands("5")}>              
                     <button>
                          5
                     </button>
                   </td>
-                  <td className="horizontal buttons">  
+                  <td className="horizontal buttons" onClick={()=> this.operands("6")}>  
                     <button>
                          6
                     </button>
                    </td>
                    <td className="horizontal signs">
-                    <button className="operations">
+                    <button className="operations" onClick={()=> this.operands("+")}>
                       +
                     </button>
                   </td> 
                  </tr>
                  <tr>
                    <td className="buttons">
-                     <button>
+                     <button onClick={()=> this.operands("1")}>
                          1
                     </button>
                    </td>
-                   <td className="vertical buttons"> 
+                   <td className="vertical buttons" onClick={()=> this.operands("2")}> 
                     <button>
                          2
                     </button>
                    </td>
-                   <td className="buttons"> 
+                   <td className="buttons" onClick={()=> this.operands("3")}> 
                     <button>
                          3
                     </button>
                    </td> 
                    <td className="signs">
-                    <button className="operations">
+                    <button className="operations" onClick={() => this.sendResult("=")}>
                       =
                     </button>
                   </td> 
