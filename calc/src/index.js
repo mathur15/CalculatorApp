@@ -37,39 +37,18 @@ class Clear extends React.Component{
 
 class Calculator extends React.Component{
   constructor(){
+    super()
     this.state={
-      a:0,
-      b:0,
-      isOperator:False,
-      operator:null
-      count:0,
+      test:0
     }
+    this.handleChange=this.handleChange.bind(this)
+  }
+
+  handleChange(evt){
+    console.log(evt.target.test)
 
   }
 
-  operands(i){
-     if(this.state.count==0 && this.state.isOperator==False){
-      this.state={
-        a:Number(i),
-        b:0,
-        isOperator: True
-        count:1,
-        operator:null
-      }
-     if(this.state.isOperator){
-       this.state={
-        a:Number(i),
-        b:0,
-        isOperator: False,
-        count:2,
-        operator:i,
-       }
-     } 
-     if(count==2){
-
-     }
-
-  }
   render(){
       return(
         <div>
@@ -81,66 +60,67 @@ class Calculator extends React.Component{
           <table>
                <tr>
                   <td className="buttons">  
-                    <button onClick={()=> this.operands("7")}>
+                  <input type="Number" name="test">
+                    <button onclick={() => handleChange}>
                          7
                     </button>
                   </td>
-                  <td className="vertical buttons" onClick={()=> this.operands("8")}>
+                  <td className="vertical buttons">
                     <button>
                          8
                     </button>
                   </td>
-                  <td className="vertical buttons" onClick={()=> this.operands("9")}>  
+                  <td className="vertical buttons">  
                     <button>
                          9
                     </button>
                   </td> 
                   <td className="signs">
-                    <button className="operations" onClick={()=> this.operands("=")}>
+                    <button className="operations">
                       -
                     </button>
                   </td>  
                 </tr>
                  <tr>
-                 <td className="horizontal buttons" onClick={()=> this.operands("4")}>  
+                 <td className="horizontal buttons">  
                     <button>
                          4
                     </button>
                   </td>
-                  <td className="vertical horizontal buttons" onClick={()=> this.operands("5")}>              
+                  <td className="vertical horizontal buttons">              
                     <button>
                          5
                     </button>
                   </td>
-                  <td className="horizontal buttons" onClick={()=> this.operands("6")}>  
+                  <td className="horizontal buttons">  
                     <button>
                          6
                     </button>
                    </td>
                    <td className="horizontal signs">
-                    <button className="operations" onClick={()=> this.operands("+")}>
+                    <button className="operations">
                       +
                     </button>
                   </td> 
                  </tr>
                  <tr>
                    <td className="buttons">
-                     <button onClick={()=> this.operands("1")}>
+                     <button>
                          1
                     </button>
                    </td>
-                   <td className="vertical buttons" onClick={()=> this.operands("2")}> 
+                   <td className="vertical buttons"> 
                     <button>
                          2
                     </button>
                    </td>
-                   <td className="buttons" onClick={()=> this.operands("3")}> 
+                   <td className="buttons"> 
                     <button>
                          3
                     </button>
                    </td> 
                    <td className="signs">
-                    <button className="operations" onClick={() => this.sendResult("=")}>
+                    <button className="operations">
                       =
                     </button>
                   </td> 
